@@ -8,7 +8,7 @@ mkdir -p /opt/ssh-phone-home
 cd /opt/ssh-phone-home
 
 # Generate SSH keys for logging in to C&C
-echo -e -n "/opt/ssh-phone-home/id_rsa\n\n\n" | ssh-keygen
+ssh-keygen -f /opt/ssh-phone-home/id_rsa -N ""
 
 
 ## Setup the local SSH server for connections from C&C ##
