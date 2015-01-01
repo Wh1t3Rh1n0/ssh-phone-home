@@ -1,6 +1,6 @@
 This project was created in order to quickly create Kali Linux based drones
-built on inexpensive hardware such as a Raspberry Pi, and then deploy those
-drones during physical penetration tests at client sites.
+built on inexpensive hardware such as a Raspberry Pi, to be plugged in to a
+target network during a physical penetration test.
 
 Anything that runs Kali should work with these scripts just fine.
 
