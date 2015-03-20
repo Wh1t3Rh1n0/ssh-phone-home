@@ -3,7 +3,7 @@
 ### SETUP C&C ###
 
 # Create the drone user account
-useradd -m drone
+useradd -m -r -s /bin/false drone
 mkdir /home/drone/.ssh
 touch /home/drone/.ssh/authorized_keys
 chown -R drone /home/drone
