@@ -21,4 +21,5 @@ fi
 sed -i 's/Port 22/Port 22\nPort 443/g' /etc/ssh/sshd_config
 
 # Start the SSH service
-service ssh start
+update-rc.d ssh enable
+service ssh restart
