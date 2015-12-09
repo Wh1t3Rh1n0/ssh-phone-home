@@ -27,3 +27,9 @@ service ssh start
 ## Create a cron job to phone home every 5 seconds ##
 echo "*/5 *  * * *  root  /opt/ssh-phone-home/phone-home.sh" >> /etc/crontab
 
+## Phone home at boot ##
+mv /etc/rc.local /etc/rc.local.orig
+cat <<EOF >/etc/rc.local
+#!/bin/bash
+/opt/ssh-phone-home/phone-home.sh &
+EOF
