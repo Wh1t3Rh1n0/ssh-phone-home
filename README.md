@@ -34,13 +34,15 @@ Modify /opt/ssh-phone-home/phone-home.sh to point to your C&C's IP/hostname.
 
 Example:
 
-		CNC_IP=64.233.176.138
+		CNC_IP=8.8.8.8
 
 Setup the drop box by running the setup script on that machine:
 
 		bash /opt/ssh-phone-home/setup-drop-box.sh
 
 Copy the drop box's public SSH key to /opt/ssh-phone-home/id_rsa.pub on the C&C.
+
+		scp /opt/ssh-phone-home/id_rsa.pub root@[CNC-IP]:/opt/ssh-phone-home/
 
 Setup the C&C server by running the C&C setup script on that machine:
 
