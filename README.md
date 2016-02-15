@@ -30,30 +30,22 @@ Download the necessary files to each machine (both the drop box and C&C).
 		cd /opt
 		git clone https://github.com/Wh1t3Rh1n0/ssh-phone-home
 
-Modify /opt/ssh-phone-home/phone-home.sh to point to your C&C's IP/hostname.
-
-Example:
-
-		CNC_IP=8.8.8.8
-
-Setup the drop box by running the setup script on that machine:
-
-		bash /opt/ssh-phone-home/setup-drop-box.sh
-
-Copy the drop box's public SSH key to /opt/ssh-phone-home/id_rsa.pub on the C&C.
-
-		scp /opt/ssh-phone-home/id_rsa.pub root@[CNC-IP]:/opt/ssh-phone-home/
-
-Setup the C&C server by running the C&C setup script on that machine:
-
-		bash /opt/ssh-phone-home/setup-cnc.sh
-
+Run the setup script on the CNC:
+        
+        cd /opt/ssh-phone-home
+        ./setup-cnc-v2
 
 This script will make the following changes to your C&C machine:
 
-* Create the non-root user "dropbox", that the drop box will connect as.
-* Import drop box's public SSH key for SSH login without a password.
-* Configure SSH to run on port 443 as well as the default port 22.
+* Create a non-root user, that the drop box will use to connect.
+* Generate an SSH key allowing the drop box to login without a password.
+* Configure the SSH server to run on port 443 as well as the default port 22.
+* Configure the SSH server to allow root to login with a password.
+
+Run the setup script on the drop box:
+		
+		cd /opt/ssh-phone-home
+		./setup-drop-box-v2
 
 
 C&C Command Reference
